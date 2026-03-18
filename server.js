@@ -324,7 +324,7 @@ input.value=value;
 
 <div class="logo">
 
-<a href="//luizbet.casino" target="_top">
+<a href="http://luizbet.casino" target="_blank">
 
 <img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="160">
 
@@ -543,7 +543,7 @@ document.getElementById("timeText").innerText="Siteye dönmek için butona tıkl
 <br><br>
 <span id="timeText">Siteye dönmek için aşağıdaki butonu kullanın</span>
 
-<a href="//luizbet.casino" target="_blank">
+<a href="http://luizbet.casino" target="_blank">
 
 <button>Siteye dönmek için tıklayınız</button>
 
@@ -693,7 +693,7 @@ transform:translateY(-1px);
 
 <div class="logo">
 
-<a href="//luizbet.casino" target="_blank">
+<a href="http://luizbet.casino" target="_blank">
 
 <img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="160">
 
