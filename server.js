@@ -519,7 +519,7 @@ if(time<=0){
 
 clearInterval(timer);
 
-window.location.href="https://luizbet.casino";
+window.location.replace("https://luizbet.casino/");
 
 }
 
