@@ -32,6 +32,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 min-height:100vh;
+padding:20px 0;
 margin:0;
 color:white;
 
@@ -50,7 +51,8 @@ border:1px solid #1c232c;
 .logo{
 
 text-align:center;
-margin-bottom:15px;
+margin-bottom:20px;
+margin-top:10px;
 
 }
 
@@ -349,11 +351,11 @@ color:white;
 .card{
 
 background:#0e1319;
-padding:35px;
-border-radius:15px;
+padding:30px;
+border-radius:20px;
 width:420px;
-text-align:center;
 border:1px solid #1c232c;
+max-width:95%;
 
 }
 
