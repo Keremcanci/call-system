@@ -5,6 +5,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(express.static(__dirname));
 
 /* ================= FORM ================= */
 
@@ -230,7 +231,7 @@ input.value=value;
 
 <div class="logo">
 
-<img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="170">
+<img src="/logo.png" width="170">
 
 </div>
 
@@ -404,7 +405,7 @@ document.getElementById("btn").click();
 
 <div class="card">
 
-<img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="150">
+<img src="/logo.png" width="150">
 
 <h2>Talebiniz Alındı</h2>
 
@@ -486,7 +487,7 @@ cursor:pointer;
 
 <div class="card">
 
-<img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="150">
+<img src="/logo.png" width="150">
 
 <form method="POST" action="/login">
 
