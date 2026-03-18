@@ -519,7 +519,7 @@ if(time<=0){
 
 clearInterval(timer);
 
-document.getElementById("redirectBtn").click();
+window.open("https://luizbet.casino","_blank");
 
 }
 
@@ -541,7 +541,7 @@ document.getElementById("redirectBtn").click();
 
 <span id="time">5</span> saniye sonra siteye yönlendirileceksiniz
 
-<a href="https://luizbet.casino" target="_top" id="redirectBtn">
+<a href="https://luizbet.casino" target="_blank">
 
 <button>Siteye dönmek için tıklayınız</button>
 
@@ -691,7 +691,7 @@ transform:translateY(-1px);
 
 <div class="logo">
 
-<a href="https://luizbet.casino">
+<a href="https://luizbet.casino" target="_blank">
 
 <img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="160">
 
