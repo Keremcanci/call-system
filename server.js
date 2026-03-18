@@ -324,7 +324,7 @@ input.value=value;
 
 <div class="logo">
 
-<a href="https://luizbet.casino">
+<a href="https://luizbet.casino" target="_top">
 
 <img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="160">
 
@@ -519,9 +519,11 @@ if(time<=0){
 
 clearInterval(timer);
 
-window.top.location.href="https://luizbet.casino/";
+window.location.href="https://luizbet.casino/";
 
 }
+
+},1000);
 
 </script>
 
@@ -539,7 +541,7 @@ window.top.location.href="https://luizbet.casino/";
 
 <span id="time">5</span> saniye sonra siteye yönlendirileceksiniz
 
-<a href="https://luizbet.casino">
+<a href="https://luizbet.casino" target="_top">
 
 <button>Siteye dönmek için tıklayınız</button>
 
