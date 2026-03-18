@@ -519,7 +519,7 @@ if(time<=0){
 
 clearInterval(timer);
 
-document.getElementById("timeText").innerText="Siteye dönmek için butona tıklayın";
+document.getElementById("redirectBtn").click();
 
 }
 
@@ -543,7 +543,7 @@ document.getElementById("timeText").innerText="Siteye dönmek için butona tıkl
 <br><br>
 <span id="timeText">Siteye dönmek için aşağıdaki butonu kullanın</span>
 
-<a href="http://luizbet.casino" target="_blank">
+<a href="http://luizbet.casino" target="_blank" id="redirectBtn">
 
 <button>Siteye dönmek için tıklayınız</button>
 
