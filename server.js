@@ -723,7 +723,7 @@ Call Center Admin Panel
 
 app.post("/login",(req,res)=>{
 
-if(req.body.user=="admin" && req.body.pass=="1234"){
+if(req.body.user=="luizcall" && req.body.pass=="luiz1234"){
 
 res.redirect("/panel");
 
