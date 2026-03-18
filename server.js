@@ -6,6 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+/* ================= FORM ================= */
+
 app.get("/",(req,res)=>{
 
 res.send(`
@@ -18,24 +20,19 @@ res.send(`
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 
 body{
 
 background:#0b0f14;
-
 font-family:Arial;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 height:100vh;
-
 margin:0;
-
 color:white;
 
 }
@@ -43,15 +40,9 @@ color:white;
 .card{
 
 background:#0e1319;
-
-padding:40px;
-
-border-radius:20px;
-
+padding:35px;
+border-radius:18px;
 width:420px;
-
-box-shadow:0 0 40px rgba(0,255,120,0.07);
-
 border:1px solid #1c232c;
 
 }
@@ -59,41 +50,29 @@ border:1px solid #1c232c;
 .logo{
 
 text-align:center;
-
-margin-bottom:25px;
-
-}
-
-.logo img{
-
-filter:drop-shadow(0 0 10px rgba(60,255,136,0.2));
+margin-bottom:20px;
 
 }
 
 .form{
 
 display:flex;
-
 flex-direction:column;
-
-gap:18px;
+gap:15px;
 
 }
 
 .group{
 
 display:flex;
-
 flex-direction:column;
-
-gap:6px;
+gap:5px;
 
 }
 
 label{
 
 font-size:13px;
-
 color:#9aa7b5;
 
 }
@@ -101,192 +80,63 @@ color:#9aa7b5;
 input,textarea{
 
 width:100%;
-
 padding:14px;
-
 background:#0b1117;
-
 border:1px solid #1c232c;
-
 border-radius:10px;
-
 color:white;
-
 font-size:14px;
-
-box-sizing:border-box;
-
-}
-
-input:focus,textarea:focus{
-
-outline:none;
-
-border:1px solid #3cff88;
 
 }
 
 textarea{
 
-height:110px;
-
-resize:none;
+height:100px;
 
 }
 
 button{
 
 margin-top:10px;
-
 padding:15px;
-
 background:linear-gradient(90deg,#2cff7a,#1fd65f);
-
 border:none;
-
 border-radius:10px;
-
 font-weight:bold;
-
 cursor:pointer;
 
-font-size:15px;
-
 }
 
-button:hover{
-
-background:linear-gradient(90deg,#34ff8a,#27e56b);
-
-}
-
-.title{
-
-margin-bottom:10px;
-
-font-size:20px;
-
-font-weight:bold;
-
-}
-
-.subtitle{
-
-color:#8b98a7;
-
-font-size:13px;
-
-margin-bottom:15px;
-
-}
-
-.phoneBox{
+.phone{
 
 display:flex;
-
-align-items:center;
-
-background:#0b1117;
-
-border:1px solid #1c232c;
-
-border-radius:10px;
-
-overflow:hidden;
 
 }
 
 .prefix{
 
-padding:14px;
-
 background:#0f151c;
-
-display:flex;
-
-align-items:center;
-
-gap:8px;
-
-border-right:1px solid #1c232c;
-
-}
-
-.prefix img{
-
-width:22px;
-
-}
-
-.phoneBox input{
-
-border:none;
-
-background:transparent;
-
-flex:1;
-
 padding:14px;
-
-color:white;
-
-}
-
-.phoneBox input:focus{
-
-outline:none;
+border:1px solid #1c232c;
+border-right:none;
+border-radius:10px 0 0 10px;
 
 }
 
-.inputBox{
+.phone input{
 
-position:relative;
-
-}
-
-.inputBox input,
-.inputBox textarea{
-
-padding-left:40px;
+border-radius:0 10px 10px 0;
+border-left:none;
 
 }
 
-.icon{
+@media(max-width:500px){
 
-position:absolute;
+.card{
 
-left:12px;
-
-top:50%;
-
-transform:translateY(-50%);
-
-color:#3cff88;
-
-font-size:14px;
+width:90%;
 
 }
-
-.texticon{
-
-top:22px;
-
-}
-
-.inputBox:focus-within .icon{
-
-color:#3cff88;
-
-text-shadow:0 0 8px rgba(60,255,136,0.6);
-
-}
-
-.inputBox:focus-within input,
-.inputBox:focus-within textarea{
-
-border:1px solid #3cff88;
-
-box-shadow:0 0 10px rgba(60,255,136,0.15);
 
 }
 
@@ -324,15 +174,9 @@ input.value=value;
 
 <div class="logo">
 
-<a href="http://luizbet.casino" target="_blank">
-
 <img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="160">
 
-</a>
-
 </div>
-
-<h3>Aranma Talebi</h3>
 
 <form class="form" method="POST" action="/add">
 
@@ -340,13 +184,7 @@ input.value=value;
 
 <label>Kullanıcı Adı</label>
 
-<div class="inputBox">
-
-<span class="icon">👤</span>
-
 <input required name="username">
-
-</div>
 
 </div>
 
@@ -354,31 +192,23 @@ input.value=value;
 
 <label>Ad Soyad</label>
 
-<div class="inputBox">
-
-<span class="icon">🧍</span>
-
 <input required name="name">
-
-</div>
 
 </div>
 
 <div class="group">
 
-<label>Telefon Numarası</label>
+<label>Telefon</label>
 
-<div class="phoneBox">
+<div class="phone">
 
 <div class="prefix">
-
-<img src="https://flagcdn.com/w40/tr.png">
 
 +90
 
 </div>
 
-<input type="tel" required name="phone" placeholder="5XXXXXXXXX" onkeyup="formatPhone(this)">
+<input type="tel" name="phone" required onkeyup="formatPhone(this)">
 
 </div>
 
@@ -388,13 +218,7 @@ input.value=value;
 
 <label>Mesaj</label>
 
-<div class="inputBox">
-
-<span class="icon texticon">✉</span>
-
 <textarea required name="reason"></textarea>
-
-</div>
 
 </div>
 
@@ -411,6 +235,8 @@ input.value=value;
 `);
 
 });
+
+/* ================= ADD ================= */
 
 app.post("/add",(req,res)=>{
 
@@ -442,17 +268,11 @@ res.send(`
 body{
 
 background:#0b0f14;
-
 font-family:Arial;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 height:100vh;
-
 color:white;
 
 }
@@ -460,45 +280,29 @@ color:white;
 .card{
 
 background:#0e1319;
-
-padding:40px;
-
+padding:35px;
 border-radius:15px;
-
 width:420px;
-
 text-align:center;
-
-box-shadow:0 0 30px rgba(0,255,120,0.1);
-
 border:1px solid #1c232c;
 
 }
 
 .ok{
 
-font-size:50px;
-
+font-size:45px;
 color:#3cff88;
-
-margin-bottom:15px;
 
 }
 
 button{
 
 margin-top:20px;
-
 padding:14px 25px;
-
-background:linear-gradient(90deg,#2cff7a,#1fd65f);
-
+background:#2cff7a;
 border:none;
-
 border-radius:8px;
-
 font-weight:bold;
-
 cursor:pointer;
 
 }
@@ -519,7 +323,7 @@ if(time<=0){
 
 clearInterval(timer);
 
-document.getElementById("redirectBtn").click();
+document.getElementById("btn").click();
 
 }
 
@@ -529,23 +333,19 @@ document.getElementById("redirectBtn").click();
 
 <div class="card">
 
-<div class="logo">
-
 <img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="150">
-
-</div>
 
 <h2>Talebiniz Alındı</h2>
 
-<p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+<p>En kısa sürede aranacaksınız</p>
 
 <span id="time">5</span> saniye kaldı
+
 <br><br>
-<span id="timeText">Siteye dönmek için aşağıdaki butonu kullanın</span>
 
-<a href="http://luizbet.casino" target="_blank" id="redirectBtn">
+<a href="http://luizbet.casino" target="_blank" id="btn">
 
-<button>Siteye dönmek için tıklayınız</button>
+<button>Siteye dön</button>
 
 </a>
 
@@ -554,6 +354,8 @@ document.getElementById("redirectBtn").click();
 `);
 
 });
+
+/* ================= ADMIN ================= */
 
 app.get("/admin",(req,res)=>{
 
@@ -564,19 +366,11 @@ res.send(`
 body{
 
 background:#0b0f14;
-
 font-family:Arial;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 height:100vh;
-
-margin:0;
-
 color:white;
 
 }
@@ -584,136 +378,52 @@ color:white;
 .card{
 
 background:#0e1319;
-
-padding:40px;
-
-border-radius:20px;
-
-width:360px;
-
-box-shadow:0 0 40px rgba(0,255,120,0.07);
-
+padding:35px;
+border-radius:18px;
+width:350px;
 border:1px solid #1c232c;
-
 text-align:center;
-
-}
-
-.logo{
-
-font-size:28px;
-
-color:#3cff88;
-
-font-weight:bold;
-
-margin-bottom:15px;
-
-}
-
-.sub{
-
-color:#8b98a7;
-
-font-size:13px;
-
-margin-bottom:15px;
 
 }
 
 input{
 
 width:100%;
-
 padding:14px;
-
 background:#0b1117;
-
 border:1px solid #1c232c;
-
 border-radius:10px;
-
 color:white;
-
 margin-top:10px;
-
-font-size:14px;
-
-transition:.2s;
-
-}
-
-input:focus{
-
-outline:none;
-
-border:1px solid #3cff88;
-
-box-shadow:0 0 10px rgba(60,255,136,0.2);
 
 }
 
 button{
 
-margin-top:18px;
-
+margin-top:15px;
 width:100%;
-
 padding:15px;
-
-background:linear-gradient(90deg,#2cff7a,#1fd65f);
-
+background:#2cff7a;
 border:none;
-
 border-radius:10px;
-
 font-weight:bold;
-
 cursor:pointer;
 
-font-size:15px;
-
-transition:.2s;
-
 }
-
-button:hover{
-
-background:linear-gradient(90deg,#34ff8a,#27e56b);
-
-transform:translateY(-1px);
-
-}
-
-
 
 </style>
 
 <div class="card">
 
-<div class="logo">
-
-<a href="http://luizbet.casino" target="_blank">
-
-<img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="160">
-
-</a>
-
-</div>
-
-<div class="sub">
-
-Call Center Admin Panel
-
-</div>
+<img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="150">
 
 <form method="POST" action="/login">
 
 <input name="user" placeholder="Username">
 
-<input type="password" name="pass" placeholder="Password">
+<input name="pass" type="password" placeholder="Password">
 
-<button>Giriş Yap</button>
+<button>Login</button>
 
 </form>
 
@@ -722,6 +432,8 @@ Call Center Admin Panel
 `);
 
 });
+
+/* ================= LOGIN ================= */
 
 app.post("/login",(req,res)=>{
 
@@ -736,6 +448,8 @@ res.send("Hatalı giriş");
 }
 
 });
+
+/* ================= PANEL ================= */
 
 app.get("/panel",(req,res)=>{
 
@@ -752,52 +466,111 @@ let html=`
 <style>
 
 body{
+
 background:#0b0f14;
 color:white;
 font-family:Arial;
+margin:0;
+
+}
+
+.panel{
+
+max-width:1400px;
+margin:auto;
+margin-top:40px;
+
+}
+
+.box{
+
+background:#0e1319;
+border-radius:15px;
+padding:20px;
+border:1px solid #1c232c;
+
 }
 
 table{
+
 width:100%;
 border-collapse:collapse;
-background:#11161d;
+
 }
 
 th{
+
 background:#0f141a;
 color:#3cff88;
-padding:12px;
+padding:14px;
+
 }
 
 td{
-padding:10px;
+
+padding:13px;
 border-bottom:1px solid #1c232c;
+
 }
 
-.pending{
-background:#2a1f00;
+.badge{
+
+padding:6px 12px;
+border-radius:6px;
+font-size:12px;
+font-weight:bold;
+
 }
 
-.called{
+.wait{
+
+background:#2a2100;
+color:#ffd43b;
+
+}
+
+.success{
+
 background:#0f2a1b;
+color:#3cff88;
+
 }
 
-.copy{
+.fail{
+
+background:#2a0f0f;
+color:#ff5252;
+
+}
+
+.btn{
+
+border:none;
+padding:8px 14px;
+border-radius:6px;
 cursor:pointer;
-color:#3cff88;
+font-weight:bold;
+margin-right:5px;
+
+}
+
+.green{
+
+background:#1fd65f;
+color:white;
+
+}
+
+.red{
+
+background:#ff3b3b;
+color:white;
+
 }
 
 </style>
 
 <script>
-
-function copy(text){
-
-navigator.clipboard.writeText(text);
-
-alert("Telefon kopyalandı");
-
-}
 
 setTimeout(()=>{
 
@@ -806,6 +579,10 @@ location.reload();
 },10000);
 
 </script>
+
+<div class="panel">
+
+<div class="box">
 
 <h2>LuizBet Call Center Panel</h2>
 
@@ -818,50 +595,81 @@ location.reload();
 <th>Telefon</th>
 <th>Sebep</th>
 <th>Tarih</th>
-<th>Status</th>
+<th>Durum</th>
 <th>İşlem</th>
 
 </tr>
-
 `;
 
 data.reverse().forEach((c,i)=>{
 
-let color="";
+let badge="";
+let text="";
 
 if(c.status=="pending"){
-color="class='pending'";
+
+badge="badge wait";
+text="Beklemede";
+
 }
 
-if(c.status=="called"){
-color="class='called'";
+if(c.status=="success"){
+
+badge="badge success";
+text="Başarılı";
+
+}
+
+if(c.status=="fail"){
+
+badge="badge fail";
+text="Başarısız";
+
 }
 
 html+=`
 
-<tr ${color}>
+<tr>
 
 <td>${c.username}</td>
 
 <td>${c.name}</td>
 
-<td class="copy" onclick="copy('${c.phone}')">
-
-${c.phone}
-
-</td>
+<td>${c.phone}</td>
 
 <td>${c.reason}</td>
 
 <td>${new Date(c.date).toLocaleString()}</td>
 
-<td>${c.status}</td>
+<td>
+
+<span class="${badge}">
+
+${text}
+
+</span>
+
+</td>
 
 <td>
 
-<a href="/status/${data.length-1-i}">
+<a href="/success/${data.length-1-i}">
 
-<button>Arandı</button>
+<button class="btn green">
+
+Arandı
+
+</button>
+
+</a>
+
+<a href="/fail/${data.length-1-i}">
+
+<button class="btn red">
+
+Aranamadı
+
+</button>
 
 </a>
 
@@ -877,19 +685,25 @@ html+=`
 
 </table>
 
+</div>
+
+</div>
+
 `;
 
 res.send(html);
 
 });
 
-app.get("/status/:id",(req,res)=>{
+/* ================= STATUS ================= */
+
+app.get("/success/:id",(req,res)=>{
 
 let data=JSON.parse(fs.readFileSync("calls.json"));
 
 let id=req.params.id;
 
-data[id].status="called";
+data[id].status="success";
 
 fs.writeFileSync("calls.json",JSON.stringify(data,null,2));
 
@@ -897,8 +711,24 @@ res.redirect("/panel");
 
 });
 
-app.listen(process.env.PORT || 3000,()=>{
+app.get("/fail/:id",(req,res)=>{
 
-console.log("Server çalışıyor");
+let data=JSON.parse(fs.readFileSync("calls.json"));
+
+let id=req.params.id;
+
+data[id].status="fail";
+
+fs.writeFileSync("calls.json",JSON.stringify(data,null,2));
+
+res.redirect("/panel");
+
+});
+
+/* ================= SERVER ================= */
+
+app.listen(process.env.PORT || 3000,()=>{ 
+
+console.log("Server çalışıyor"); 
 
 });
