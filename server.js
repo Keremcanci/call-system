@@ -519,7 +519,7 @@ if(time<=0){
 
 clearInterval(timer);
 
-window.open("https://luizbet.casino","_blank");
+document.getElementById("timeText").innerText="Siteye dönmek için butona tıklayın";
 
 }
 
@@ -539,7 +539,9 @@ window.open("https://luizbet.casino","_blank");
 
 <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
 
-<span id="time">5</span> saniye sonra siteye yönlendirileceksiniz
+<span id="time">5</span> saniye kaldı
+<br><br>
+<span id="timeText">Siteye dönmek için aşağıdaki butonu kullanın</span>
 
 <a href="https://luizbet.casino" target="_blank">
 
