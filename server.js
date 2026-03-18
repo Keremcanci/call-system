@@ -31,7 +31,7 @@ font-family:Arial;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+min-height:100vh;
 margin:0;
 color:white;
 
@@ -41,7 +41,7 @@ color:white;
 
 background:#0e1319;
 padding:35px;
-border-radius:18px;
+border-radius:20px;
 width:420px;
 border:1px solid #1c232c;
 
@@ -50,7 +50,23 @@ border:1px solid #1c232c;
 .logo{
 
 text-align:center;
+margin-bottom:15px;
+
+}
+
+.title{
+
+font-size:22px;
+margin-bottom:5px;
+
+}
+
+.desc{
+
+font-size:13px;
+color:#9aa7b5;
 margin-bottom:20px;
+line-height:1.5;
 
 }
 
@@ -66,7 +82,7 @@ gap:15px;
 
 display:flex;
 flex-direction:column;
-gap:5px;
+gap:6px;
 
 }
 
@@ -86,12 +102,58 @@ border:1px solid #1c232c;
 border-radius:10px;
 color:white;
 font-size:14px;
+box-sizing:border-box;
 
 }
 
 textarea{
 
-height:100px;
+height:110px;
+resize:none;
+
+}
+
+.phoneBox{
+
+display:flex;
+align-items:center;
+background:#0b1117;
+border:1px solid #1c232c;
+border-radius:10px;
+overflow:hidden;
+
+}
+
+.prefix{
+
+display:flex;
+align-items:center;
+gap:8px;
+padding:13px;
+background:#0f151c;
+border-right:1px solid #1c232c;
+
+}
+
+.prefix img{
+
+width:22px;
+
+}
+
+.phoneBox input{
+
+border:none;
+background:transparent;
+flex:1;
+padding:14px;
+color:white;
+
+}
+
+.phoneBox input:focus{
+
+outline:none;
 
 }
 
@@ -104,29 +166,21 @@ border:none;
 border-radius:10px;
 font-weight:bold;
 cursor:pointer;
+font-size:15px;
 
 }
 
-.phone{
+button:hover{
 
-display:flex;
-
-}
-
-.prefix{
-
-background:#0f151c;
-padding:14px;
-border:1px solid #1c232c;
-border-right:none;
-border-radius:10px 0 0 10px;
+background:linear-gradient(90deg,#34ff8a,#27e56b);
 
 }
 
-.phone input{
+input:focus,
+textarea:focus{
 
-border-radius:0 10px 10px 0;
-border-left:none;
+outline:none;
+border:1px solid #3cff88;
 
 }
 
@@ -174,7 +228,20 @@ input.value=value;
 
 <div class="logo">
 
-<img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="160">
+<img src="https://cmsbetconstruct.com/storage/medias/novabets-18761023/media_18761023_71df681c6b11e1a879eed3f18ae48c39.png" width="170">
+
+</div>
+
+<div class="title">
+
+Aranma Talebi
+
+</div>
+
+<div class="desc">
+
+Tüm soru, görüş, öneri ve iletişim taleplerinizi özel müşteri temsilcimiz yanıtlamaya hazır.  
+Call Center departmanımız sizlere en kısa sürede dönüş sağlayacaktır.
 
 </div>
 
@@ -198,17 +265,19 @@ input.value=value;
 
 <div class="group">
 
-<label>Telefon</label>
+<label>Telefon Numarası</label>
 
-<div class="phone">
+<div class="phoneBox">
 
 <div class="prefix">
+
+<img src="https://flagcdn.com/w40/tr.png">
 
 +90
 
 </div>
 
-<input type="tel" name="phone" required onkeyup="formatPhone(this)">
+<input type="tel" required name="phone" placeholder="5XXXXXXXXX" onkeyup="formatPhone(this)">
 
 </div>
 
