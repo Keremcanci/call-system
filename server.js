@@ -519,7 +519,7 @@ if(time<=0){
 
 clearInterval(timer);
 
-window.location.href="https://luizbet.casino/";
+document.getElementById("redirectBtn").click();
 
 }
 
@@ -541,7 +541,7 @@ window.location.href="https://luizbet.casino/";
 
 <span id="time">5</span> saniye sonra siteye yönlendirileceksiniz
 
-<a href="https://luizbet.casino" target="_top">
+<a href="https://luizbet.casino" target="_top" id="redirectBtn">
 
 <button>Siteye dönmek için tıklayınız</button>
 
