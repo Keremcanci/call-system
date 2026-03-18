@@ -509,13 +509,15 @@ cursor:pointer;
 
 let time=5;
 
-setInterval(()=>{
-
-document.getElementById("count").innerText=time;
+let timer=setInterval(()=>{
 
 time--;
 
-if(time<0){
+document.getElementById("time").innerText=time;
+
+if(time<=0){
+
+clearInterval(timer);
 
 window.location.href="https://luizbet.casino";
 
@@ -537,7 +539,7 @@ window.location.href="https://luizbet.casino";
 
 <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
 
-<p><span id="count">5</span> saniye sonra siteye yönlendirileceksiniz</p>
+<span id="time">5</span> saniye sonra siteye yönlendirileceksiniz
 
 <a href="https://luizbet.casino">
 
