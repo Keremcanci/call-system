@@ -519,15 +519,9 @@ if(time<=0){
 
 clearInterval(timer);
 
-setTimeout(()=>{
-
-window.location.replace("https://luizbet.casino/");
-
-},100);
+window.top.location.href="https://luizbet.casino/";
 
 }
-
-},1000);
 
 </script>
 
