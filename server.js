@@ -525,9 +525,7 @@ app.get("/panel",(req,res)=>{
 let data=[];
 
 if(fs.existsSync("calls.json")){
-
 data=JSON.parse(fs.readFileSync("calls.json"));
-
 }
 
 let html=`
@@ -545,7 +543,7 @@ margin:0;
 
 .panel{
 
-max-width:1400px;
+max-width:1500px;
 margin:auto;
 margin-top:40px;
 
@@ -564,6 +562,7 @@ table{
 
 width:100%;
 border-collapse:collapse;
+table-layout:fixed;
 
 }
 
@@ -572,6 +571,7 @@ th{
 background:#0f141a;
 color:#3cff88;
 padding:14px;
+text-align:left;
 
 }
 
@@ -579,6 +579,15 @@ td{
 
 padding:13px;
 border-bottom:1px solid #1c232c;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+
+}
+
+tr:hover{
+
+background:#151c25;
 
 }
 
@@ -615,11 +624,12 @@ color:#ff5252;
 .btn{
 
 border:none;
-padding:8px 14px;
+padding:8px 12px;
 border-radius:6px;
 cursor:pointer;
 font-weight:bold;
 margin-right:5px;
+min-width:80px;
 
 }
 
@@ -636,6 +646,14 @@ background:#ff3b3b;
 color:white;
 
 }
+
+.colUser{width:120px;}
+.colName{width:150px;}
+.colPhone{width:170px;}
+.colReason{width:250px;}
+.colDate{width:200px;}
+.colStatus{width:140px;}
+.colAction{width:180px;}
 
 </style>
 
@@ -659,13 +677,13 @@ location.reload();
 
 <tr>
 
-<th>Kullanıcı</th>
-<th>İsim</th>
-<th>Telefon</th>
-<th>Sebep</th>
-<th>Tarih</th>
-<th>Durum</th>
-<th>İşlem</th>
+<th class="colUser">Kullanıcı</th>
+<th class="colName">İsim</th>
+<th class="colPhone">Telefon</th>
+<th class="colReason">Sebep</th>
+<th class="colDate">Tarih</th>
+<th class="colStatus">Durum</th>
+<th class="colAction">İşlem</th>
 
 </tr>
 `;
@@ -700,46 +718,36 @@ html+=`
 
 <tr>
 
-<td>${c.username}</td>
+<td class="colUser">${c.username}</td>
 
-<td>${c.name}</td>
+<td class="colName">${c.name}</td>
 
-<td>${c.phone}</td>
+<td class="colPhone">${c.phone}</td>
 
-<td>${c.reason}</td>
+<td class="colReason">${c.reason}</td>
 
-<td>${new Date(c.date).toLocaleString()}</td>
+<td class="colDate">${new Date(c.date).toLocaleString()}</td>
 
-<td>
+<td class="colStatus">
 
 <span class="${badge}">
-
 ${text}
-
 </span>
 
 </td>
 
-<td>
+<td class="colAction">
 
 <a href="/success/${data.length-1-i}">
-
 <button class="btn green">
-
 Arandı
-
 </button>
-
 </a>
 
 <a href="/fail/${data.length-1-i}">
-
 <button class="btn red">
-
 Aranamadı
-
 </button>
-
 </a>
 
 </td>
