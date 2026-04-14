@@ -48,11 +48,6 @@ app.get("/", (req, res) => {
     text-align: center;
   }
 
-  .card-header img {
-    width: 160px;
-    margin-bottom: 20px;
-  }
-
   .badge {
     display: inline-flex;
     align-items: center;
@@ -274,10 +269,12 @@ app.get("/", (req, res) => {
 <div class="page">
   <div class="card">
     <div class="card-header">
-      <img src="/logo.png" alt="Logo">
-      <div class="badge">7/24 Destek</div>
+      <div style="display:flex;justify-content:center;margin-bottom:20px;">
+        <img src="/logo.png" alt="Logo" style="width:160px;">
+      </div>
       <h1>Sizi Arayalım</h1>
       <p>Uzman müşteri temsilcimiz en kısa sürede<br>sizi arayarak yardımcı olacaktır.</p>
+      <div class="badge" style="margin-top:14px;margin-bottom:0;">10:00 - 20:00 Hizmet Saatleri</div>
     </div>
     <div class="card-body">
       <div class="info-row">
