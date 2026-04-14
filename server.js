@@ -431,7 +431,7 @@ app.post("/add", (req, res) => {
     <div class="timer-bar" id="bar"></div>
   </div>
   <div class="timer-text"><span id="time">5</span> saniye içinde yönlendiriliyorsunuz</div>
-  <a href="http://luizbet.casino" target="_blank" id="btn">
+  <a href="https://luizbet.casino" target="_blank" id="btn">
     <button>Siteye Dön</button>
   </a>
 </div>
