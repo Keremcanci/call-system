@@ -87,9 +87,10 @@ app.get("/", (req, res) => {
   }
 
   .card-header p {
-    font-size: 13px;
-    color: #6b7f8f;
+    font-size: 14px;
+    color: #b0c4d8;
     line-height: 1.6;
+    font-weight: 500;
   }
 
   .card-body {
@@ -103,8 +104,8 @@ app.get("/", (req, res) => {
   label {
     display: block;
     font-size: 12px;
-    font-weight: 600;
-    color: #8a9bb0;
+    font-weight: 700;
+    color: #c8d8e8;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -129,7 +130,7 @@ app.get("/", (req, res) => {
   }
 
   input::placeholder, textarea::placeholder {
-    color: #3a4a5a;
+    color: #506070;
   }
 
   textarea {
@@ -310,7 +311,7 @@ app.get("/", (req, res) => {
           <label>Mesajınız</label>
           <textarea required name="reason" placeholder="Konu veya talebinizi kısaca belirtin..."></textarea>
         </div>
-        <button type="submit" class="submit-btn">Gönder — Sizi Arayalım</button>
+        <button type="submit" class="submit-btn">Sizi Arayalım</button>
       </form>
     </div>
   </div>
